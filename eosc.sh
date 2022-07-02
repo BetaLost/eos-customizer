@@ -22,7 +22,7 @@ AUR_PKGS=(
 for aurpkg in "${AUR_PKGS[@]}"; do
 	git clone https://aur.archlinux.org/$aurpkg.git
 	cd $aurpkg
-	makepkg -si --noconfirm
+	yes | makepkg -si
 	cd ..
 	rm -rf $aurpkg
 done
