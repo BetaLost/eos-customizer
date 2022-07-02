@@ -64,13 +64,14 @@ curl -fLso ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.
 mv $HOME/eos-customizer/dotfiles/.vimrc $HOME/
 
 # Configure Rofi
+rm -rf $HOME/.config/rofi
 mv $HOME/eos-customizer/dotfiles/rofi $HOME/.config/
 
 # Configure Kitty
 mv $HOME/eos-customizer/dotfiles/kitty $HOME/.config/
 
 # Configure Picom 
-mv $HOME/eos-customizer/dotfiles/picom $HOME/.config/
+mv $HOME/eos-customizer/dotfiles/picom.conf $HOME/.config/
 
 # Configure Polybar
 mv $HOME/eos-customizer/dotfiles/polybar $HOME/.config/
