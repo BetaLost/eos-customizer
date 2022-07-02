@@ -7,10 +7,10 @@ su -c "echo \"$USER ALL=(ALL:ALL) NOPASSWD: ALL\" | EDITOR=\"tee -a\" visudo"
 sudo chmod a+rw /sys/class/backlight/intel_backlight/brightness
 
 # Remove original picom
-sudo pacman -Rs picom
+sudo pacman -Rs --noconfirm picom
 
 # Install packages
-sudo pacman -S lightdm-webkit2-greeter light zsh flameshot kitty vim exa bat wmctrl
+sudo pacman -S --noconfirm lightdm-webkit2-greeter light zsh flameshot kitty vim exa bat wmctrl
 
 AUR_PKGS=(
 	"nerd-fonts-jetbrains-mono" # JetBrains Mono Nerd Font
