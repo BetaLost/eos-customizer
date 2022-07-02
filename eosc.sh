@@ -6,8 +6,26 @@ su -c "echo \"$USER ALL=(ALL:ALL) NOPASSWD: ALL\" | EDITOR=\"tee -a\" visudo"
 # Make screen brightness changeable
 sudo chmod a+rw /sys/class/backlight/intel_backlight/brightness
 
+# Remove original picom
+sudo pacman -Rs picom
+
 # Install packages
 sudo pacman -S lightdm-webkit2-greeter light zsh flameshot kitty vim exa bat wmctrl
+
+AUR_PKGS=(
+	"nerd-fonts-jetbrains-mono" # JetBrains Mono Nerd Font
+	"ttf-poppins" # Poppins font
+	"picom-ibhagwan-git" # Picom compositor
+	"brave-bin" # Brave Browser
+)
+
+for aurpkg in "${AUR_PKGS[@]}"; do
+	git clone https://aur.archlinux.org/$aurpkg.git
+	cd $aurpkg
+	makepkg -si --noconfirm
+	cd ..
+	rm -rf $aurpkg
+done
 
 # Install LightDM Aether theme
 git clone https://github.com/NoiSek/Aether.git
