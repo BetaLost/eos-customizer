@@ -40,16 +40,13 @@ sudo sed -i "s/Icon=\/home\/$USER\/.face/Icon=\/var\/lib\/AccountsService\/icons
 # Change default shell to ZSH
 sudo chsh -s /bin/zsh $USER
 
-# Move dotfiles to home directory
-mv $HOME/eos-customizer/dotfiles $HOME/
-
 # Configure BSPWM & SXHKD
 rm -rf $HOME/.config/bspwm
 rm -rf $HOME/.config/sxhkd
-mv $HOME/dotfiles/bspwm $HOME/.config/
-mv $HOME/dotfiles/sxhkd $HOME/.config/
+mv $HOME/eos-customizer/dotfiles/bspwm $HOME/.config/
+mv $HOME/eos-customizer/dotfiles/sxhkd $HOME/.config/
 
-mv $HOME/dotfiles/wallpapers $HOME/.config/
+mv $HOME/eos-customizer/dotfiles/wallpapers $HOME/.config/
 
 sudo find $HOME/.config/bspwm -type f -exec chmod +x {} \;
 sudo find $HOME/.config/sxhkd -type f -exec chmod +x {} \;
@@ -57,26 +54,26 @@ sudo find $HOME/.config/sxhkd -type f -exec chmod +x {} \;
 # Configure ZSH
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/zsh-syntax-highlighting
-mv $HOME/dotfiles/.zshrc $HOME/
+mv $HOME/eos-customizer/dotfiles/.zshrc $HOME/
 
 # Configure Bash
-mv $HOME/dotfiles/.bashrc $HOME/
+mv $HOME/eos-customizer/dotfiles/.bashrc $HOME/
 
 # Configure VIM
 curl -fLso ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-mv $HOME/dotfiles/.vimrc $HOME/
+mv $HOME/eos-customizer/dotfiles/.vimrc $HOME/
 
 # Configure Rofi
-mv $HOME/dotfiles/rofi $HOME/.config/
+mv $HOME/eos-customizer/dotfiles/rofi $HOME/.config/
 
 # Configure Kitty
-mv $HOME/dotfiles/kitty $HOME/.config/
+mv $HOME/eos-customizer/dotfiles/kitty $HOME/.config/
 
 # Configure Picom 
-mv $HOME/dotfiles/picom $HOME/.config/
+mv $HOME/eos-customizer/dotfiles/picom $HOME/.config/
 
 # Configure Polybar
-mv $HOME/dotfiles/polybar $HOME/.config/
+mv $HOME/eos-customizer/dotfiles/polybar $HOME/.config/
 
 for script in $HOME/.config/polybar/scripts/*; do
     sudo chmod +x $script
@@ -88,7 +85,7 @@ rm $HOME/eos-customizer/khebrat-musamim.zip
 sudo mkdir -p /usr/share/fonts/TTF
 sudo mv "$HOME/eos-customizer/18 Khebrat Musamim Regular.ttf" /usr/share/fonts/TTF/
 
-sudo mv $HOME/dotfiles/fonts.conf /etc/fonts/
+sudo mv $HOME/eos-customizer/dotfiles/fonts.conf /etc/fonts/
 sudo cp /etc/fonts/fonts.conf /etc/fonts/local.conf
 
 # Install GRUB theme
