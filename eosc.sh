@@ -33,7 +33,7 @@ sudo cp --recursive Aether /usr/share/lightdm-webkit/themes/
 rm -rf Aether
 sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = lightdm-webkit-theme-aether #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
 sudo ln -s /usr/share/lightdm-webkit/themes/Aether /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether
-sudo sed -i "s/greeter-session = lightdm-slick-greeter/greeter-session = lightdm-webkit2-greeter/g" /etc/lightdm/lightdm.conf
+sudo sed -i "s/greeter-session=lightdm-slick-greeter/greeter-session=lightdm-webkit2-greeter/g" /etc/lightdm/lightdm.conf
 sudo cp /usr/share/lightdm-webkit/themes/Aether/src/img/default-user.png /var/lib/AccountsService/icons/$USER
 sudo sed -i "s/Icon=\/home\/$USER\/.face/Icon=\/var\/lib\/AccountsService\/icons\/$USER/g" /var/lib/AccountsService/users/$USER
 
@@ -74,6 +74,7 @@ mv $HOME/eos-customizer/dotfiles/kitty $HOME/.config/
 mv $HOME/eos-customizer/dotfiles/picom.conf $HOME/.config/
 
 # Configure Polybar
+rm -rf $HOME/.config/polybar
 mv $HOME/eos-customizer/dotfiles/polybar $HOME/.config/
 
 for script in $HOME/.config/polybar/scripts/*; do
@@ -96,7 +97,7 @@ sudo mv endeavourOS.tar /boot/grub/themes/endeavourOS/
 sudo tar xf /boot/grub/themes/endeavourOS/endeavourOS.tar -C /boot/grub/themes/endeavourOS/
 sudo rm /boot/grub/themes/endeavourOS/endeavourOS.tar
 sudo sed -i "s/GRUB_GFXMODE=auto/GRUB_GFXMODE=1920x1080/g" /etc/default/grub
-sudo sed -i "s/#GRUB_THEME=.*/GRUB_THEME=\"\/boot\/grub\/themes\/endeavourOS\/theme.txt\"/g" /etc/default/grub
+sudo sed -i "s/GRUB_THEME=\/boot\/grub\/themes\/EndeavourOS\/theme.txt/GRUB_THEME=\"\/boot\/grub\/themes\/endeavourOS\/theme.txt\"/g" /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Install cursor
