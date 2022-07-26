@@ -14,13 +14,13 @@
     selected-active-foreground:  rgba ( 166, 226, 42, 100 % );
     alternate-active-background: rgba ( 39, 40, 34, 0 % );
     /* background:                  rgba ( 39, 40, 34, 93 % ); */
-	background: #0b0a17;
-    bordercolor:                 rgba ( 0, 43, 54, 100 % );
+	background: #282a36;
+    bordercolor:                 #69ff94;
     alternate-normal-foreground: @foreground;
     normal-background:           rgba ( 39, 40, 34, 0 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  #323157;
-    border-color:                #323157;
+    selected-normal-background:  #44475a;
+    border-color:                #69ff94;
     spacing:                     2;
     separatorcolor:              rgba ( 230, 219, 116, 100 % );
     urgent-background:           rgba ( 39, 40, 34, 0 % );
@@ -59,7 +59,7 @@ textbox {
 listview {
     fixed-height: 0;
     border:       2px 0px 0px ;
-    border-color: #323157;
+    border-color: #69ff94;
     spacing:      2px ;
     scrollbar:    true;
     padding:      2px 0px 0px ;
