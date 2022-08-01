@@ -10,7 +10,7 @@ sudo chmod a+rw /sys/class/backlight/intel_backlight/brightness
 sudo pacman -Rs --noconfirm picom
 
 # Install packages
-sudo pacman -S --noconfirm lightdm-webkit2-greeter light pulsemixer zsh flameshot kitty vim exa bat wmctrl
+sudo pacman -S --noconfirm lightdm-webkit2-greeter light pulsemixer zsh flameshot kitty vim exa bat wmctrl ttf-joypixels
 
 AUR_PKGS=(
 	"nerd-fonts-jetbrains-mono" # JetBrains Mono Nerd Font
